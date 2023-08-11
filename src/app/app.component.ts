@@ -18,14 +18,25 @@ export class AppComponent {
     .enable()
     .then(() => {
       const myInput = WebMidi.getInputById(WebMidi.inputs[1].id);
-      console.log(WebMidi.inputs[0].id);
+      const myOutput = WebMidi.getOutputById(WebMidi.outputs[1].id);
+      const myChannel = myOutput?.channels[1];
       myInput.addListener("noteon", e => {
-        console.log(e.note.identifier);
+        if (myChannel) {
+          myChannel.playNote(e.note.identifier, {
+            attack: Math.round(Math.random() * 10) / 10
+          });
+        }
       });
 
-      const myOutput = WebMidi.getOutputById(WebMidi.outputs[1].id);
-      console.log(myOutput);
-      myOutput?.channels[1].sendPitchBend(-0.25).playNote('C3');
+      myInput.addListener("noteoff", e => {
+        if (myChannel) {
+          myChannel.playNote(e.note.identifier, {
+            attack: Math.round(Math.random() * 10) / 10,
+            duration: 1000
+          });
+        }
+      });
+
     })
     .catch((err: any) => alert(err));
   }
