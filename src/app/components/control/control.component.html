@@ -1,0 +1,6 @@
+<button (click)="start()">start</button>
+<ul>
+  <li *ngFor="let category of categories$ | async">
+    {{category.categoryName}}: {{category.score}}
+  </li>
+</ul>
