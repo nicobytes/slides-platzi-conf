@@ -1,11 +1,11 @@
 import { Component, inject, ChangeDetectorRef } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { AsyncPipe, NgFor, PercentPipe } from '@angular/common';
 import { AudioTaskService } from '@app/services/audio-task.service';
 
 @Component({
   selector: 'app-control-audio',
   standalone: true,
-  imports: [CommonModule],
+  imports: [NgFor, PercentPipe, AsyncPipe],
   templateUrl: './control-audio.component.html'
 })
 export class ControlAudioComponent {
