@@ -22,8 +22,6 @@ export class AudioTaskService {
     );
 
     this.audioClassifier = await AudioClassifier.createFromOptions(audio, {
-      displayNamesLocale: 'es',
-      maxResults: 3,
       baseOptions: {
         modelAssetPath:
           "https://storage.googleapis.com/mediapipe-models/audio_classifier/yamnet/float32/1/yamnet.tflite"
@@ -46,7 +44,7 @@ export class AudioTaskService {
       const result = this.audioClassifier.classify(inputData);
       if (result.length > 0) {
         const categories = result[0].classifications[0].categories;
-        this.categories$.next(categories);
+        this.categories$.next(categories.slice(0, 3));
       }
 
     };
