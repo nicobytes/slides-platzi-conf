@@ -10,9 +10,9 @@ import { LaunchpadService } from './services/launchpad.service';
 })
 export class AppComponent {
 
-  private lauchpad = inject(LaunchpadService);
+  private launchpad = inject(LaunchpadService);
 
   ngOnInit() {
-    this.lauchpad.connect();
+    this.launchpad.connect();
   }
 }

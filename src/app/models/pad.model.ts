@@ -1,4 +1,4 @@
 export interface Pad {
-  color: number;
+  color: string;
   identifier: string;
 }

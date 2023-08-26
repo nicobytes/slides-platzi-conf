@@ -1,6 +1,16 @@
-<button (click)="start()">start</button>
-<ul>
-  <li *ngFor="let category of categories$ | async">
-    {{category.categoryName}}: {{category.score}}
-  </li>
-</ul>
+<main class="h-screen w-screen relative p-2">
+  <div class="flex space-x-2">
+    <div class="w-72 space-y-2">
+      <div class="h-72 w-full">
+        <app-grid />
+      </div>
+      <div class="h-40 w-full">
+        <app-wave-micro />
+      </div>
+      <app-control-audio />
+    </div>
+    <div class="w-4/6">
+      <app-canvas />
+    </div>
+  </div>
+</main>

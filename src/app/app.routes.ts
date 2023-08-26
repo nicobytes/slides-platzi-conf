@@ -4,11 +4,7 @@ import { ControlComponent } from './components/control/control.component';
 
 export const routes: Routes = [
   {
-    path: 'grid',
-    component: GridComponent
-  },
-  {
-    path: 'control',
+    path: '',
     component: ControlComponent
-  }
+  },
 ];
