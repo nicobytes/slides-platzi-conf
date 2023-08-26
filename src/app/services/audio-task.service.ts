@@ -31,7 +31,7 @@ export class AudioTaskService {
 
   async runStreamingAudioClassification() {
     const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-    this.audioCtx = new AudioContext({ sampleRate: 16000 });
+    this.audioCtx = new AudioContext();
 
     const source = this.audioCtx.createMediaStreamSource(stream);
     const scriptNode = this.audioCtx.createScriptProcessor(16384, 1, 1);
