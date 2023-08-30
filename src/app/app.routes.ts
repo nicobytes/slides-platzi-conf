@@ -1,10 +1,14 @@
 import { Routes } from '@angular/router';
-import { GridComponent } from './components/grid/grid.component';
-import { ControlComponent } from './components/control/control.component';
+import { EmojiRainComponent } from './pages/emoji-rain/emoji-rain.component';
+import { YamnetComponent } from './pages/yamnet/yamnet.component';
 
 export const routes: Routes = [
   {
     path: '',
-    component: ControlComponent
+    component: YamnetComponent
+  },
+  {
+    path: 'emojis',
+    component: EmojiRainComponent
   },
 ];

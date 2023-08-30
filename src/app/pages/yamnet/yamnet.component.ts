@@ -6,12 +6,11 @@ import { WaveMicroComponent } from '@app/components/wave-micro/wave-micro.compon
 import { ControlAudioComponent } from '@app/components/control-audio/control-audio.component';
 
 @Component({
-  selector: 'app-control',
+  selector: 'app-yamnet',
   standalone: true,
-  imports: [CommonModule, CanvasComponent, GridComponent, WaveMicroComponent, ControlAudioComponent],
-  templateUrl: './control.component.html'
+  imports: [CanvasComponent, GridComponent, WaveMicroComponent, ControlAudioComponent],
+  templateUrl: './yamnet.component.html'
 })
-export class ControlComponent {
-
+export class YamnetComponent {
 
 }

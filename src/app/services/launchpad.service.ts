@@ -47,13 +47,14 @@ export class LaunchpadService {
     .enable()
     .then(() => {
       this.connected.set(true);
-      const myInput = WebMidi.getInputById(WebMidi.inputs[1].id);
+      const myInput = WebMidi.getInputById(WebMidi.inputs[2].id);
       const myOutput = WebMidi.getOutputById(WebMidi.outputs[1].id);
       const myChannel = myOutput?.channels[1];
       let audio!: HTMLAudioElement;
       const song = new Audio('./assets/song.wav');
 
       myInput.addListener("noteon", e => {
+        console.log(e.note.identifier);
         //const file = this.audios[e.note.identifier];
         const file = this.song1.files[this.song1.currentStep];
         console.log(this.song1.currentStep);
