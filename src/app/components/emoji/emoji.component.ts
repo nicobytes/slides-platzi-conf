@@ -5,29 +5,28 @@ import { NgStyle } from '@angular/common';
   selector: 'app-emoji',
   standalone: true,
   imports: [NgStyle],
-  template: ` <span class="text-3xl absolute" [ngStyle]="styles">{{ emoji }}</span> `,
+  template: `
+    <span class="text-3xl absolute" [ngStyle]="styles">{{ emoji }}</span>
+  `,
 })
 export class EmojiComponent {
-  @Input({ required: true }) emoji!: string;
-  @Input({ required: true }) x!: number;
-  @Input({ required: true }) y!: number;
-  @Input({ required: true }) v!: { x: number; y: number };
-  @Input({ required: true }) range!: [number, number];
+  private moveY: number = 1 + Math.random() * 1;
+  private moveX: number = -0.15 + Math.random() * 0.3;
 
-  styles: Record<string, string> = {
+  @Input({ required: true }) emoji: string = '';
+  @Input({ required: true }) x: number = 0;
+  @Input({ required: true }) y: number = 0;
+
+  styles = {
     color: 'hsl(' + ((Math.random() * 360) | 0) + ',80%,50%)',
     opacity: '0',
+    transform: `translate3d(${this.x}px, ${this.y}px,  0px)`,
   };
 
   update() {
-    if (this.y > 800) {
-      this.y = 80 + Math.random() * 4;
-      this.x = this.range[0] + Math.random() * this.range[1];
-    }
-    this.y += this.v.y;
-    this.x += this.v.x;
-    this.styles['opacity'] = '1';
-    this.styles['transform'] =
-      'translate3d(' + this.x + 'px, ' + this.y + 'px, 0px)';
+    this.y += this.moveY;
+    this.x += this.moveX;
+    this.styles.transform = `translate3d(${this.x}px, ${this.y}px,  0px)`;
+    this.styles.opacity = `1`;
   }
 }

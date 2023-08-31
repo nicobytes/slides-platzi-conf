@@ -2,8 +2,6 @@ import { Injectable, signal } from '@angular/core';
 import { FilesetResolver, AudioClassifier, Category } from '@mediapipe/tasks-audio';
 import { BehaviorSubject } from 'rxjs';
 
-
-
 @Injectable({
   providedIn: 'root'
 })
@@ -16,12 +14,13 @@ export class AudioTaskService {
 
   constructor() {}
 
-  async createAudioClassifier () {
+  async createAudioClassifier (maxResults: number = 3) {
     const audio = await FilesetResolver.forAudioTasks(
       "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-audio@0.10.0/wasm"
     );
 
     this.audioClassifier = await AudioClassifier.createFromOptions(audio, {
+      maxResults,
       baseOptions: {
         modelAssetPath:
           "https://storage.googleapis.com/mediapipe-models/audio_classifier/yamnet/float32/1/yamnet.tflite"
@@ -44,7 +43,7 @@ export class AudioTaskService {
       const result = this.audioClassifier.classify(inputData);
       if (result.length > 0) {
         const categories = result[0].classifications[0].categories;
-        this.categories$.next(categories.slice(0, 3));
+        this.categories$.next(categories);
       }
 
     };

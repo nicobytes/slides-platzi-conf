@@ -1,7 +1,10 @@
-import { Component, QueryList, ViewChildren } from '@angular/core';
-import { CommonModule, NgFor } from '@angular/common';
+import { Component, QueryList, ViewChildren, inject } from '@angular/core';
+import { NgFor } from '@angular/common';
 import { Emoji } from '@app/models/emoji.model';
 import { EmojiComponent } from '@app/components/emoji/emoji.component';
+import { EMOJIS } from '@app/utils/emojis';
+import { AudioTaskService } from '@app/services/audio-task.service';
+import { debounceTime } from 'rxjs';
 
 @Component({
   selector: 'app-emoji-rain',
@@ -9,79 +12,83 @@ import { EmojiComponent } from '@app/components/emoji/emoji.component';
   imports: [NgFor, EmojiComponent],
   template: `
     <div class="h-screen w-screen bg-black relative overflow-hidden">
+      <p
+        class="text-white uppercase text-8xl absolute top-2/4 left-2/4 -translate-x-1/2 -translate-y-2/4"
+      >
+        Emoji Rain
+      </p>
       <app-emoji
-        *ngFor="let item of circles"
+        *ngFor="let item of emojis"
         [x]="item.x"
-        [y]="item.x"
+        [y]="item.y"
         [emoji]="item.emoji"
-        [v]="item.v"
-        [range]="item.range"
       ></app-emoji>
     </div>
   `,
 })
 export class EmojiRainComponent {
-  emojis = [
-    '🌽',
-    '🍇',
-    '🍌',
-    '🍒',
-    '🍕',
-    '🍷',
-    '🍭',
-    '💖',
-    '💩',
-    '🐷',
-    '🐸',
-    '🐳',
-    '🎃',
-    '🎾',
-    '🌈',
-    '🍦',
-    '💁',
-    '🔥',
-    '😁',
-    '😱',
-    '🌴',
-    '👏',
-    '💃',
-  ];
-  circles: Emoji[] = [];
-  @ViewChildren(EmojiComponent) comps!: QueryList<EmojiComponent>;
+  private audio = inject(AudioTaskService);
+  emojis: Emoji[] = [];
+  @ViewChildren(EmojiComponent) emojisComps!: QueryList<EmojiComponent>;
+  categories$ = this.audio.categories$.asObservable();
+
+  constructor() {
+    this.categories$
+    .pipe(
+      debounceTime(350)
+    )
+    .subscribe((values) => {
+      console.log(
+        values.map(
+          (item) => `${item.categoryName} ${item.index} ${EMOJIS[item.index]}`
+        )
+      );
+      this.generateEmojis(values.map((item) => item.index));
+    });
+  }
 
   ngOnInit() {
-    this.generateCircles();
+    this.start();
   }
 
   ngAfterViewInit() {
-    this.animate();
+    requestAnimationFrame(() => this.animate());
   }
 
-  generateCircles() {
-    for (let i = 0; i < 1000; i++) {
-      this.addCircle(i * 150,[10, window.innerWidth-10],this.emojis[Math.floor(Math.random() * this.emojis.length)]);
-    }
+  generateEmojis(indexes: number[]) {
+    indexes.forEach((index) => {
+      this.addEmoji(EMOJIS[index]);
+      this.addEmoji(EMOJIS[index]);
+    });
   }
 
-  addCircle(delay: number, range: [number, number], emoji: string) {
-    setTimeout(() => {
-      this.circles.push({
-        emoji: emoji,
-        x: range[0] + Math.random() * range[1],
-        y: 80 + Math.random() * 4,
-        v: {
-          x: -0.15 + Math.random() * 0.3,
-          y: 1 + Math.random() * 1,
-        },
-        range,
-      });
-    }, delay);
+  addEmoji(emoji: string) {
+    const { x, y } = this.getRandomPosition(
+      window.innerWidth,
+      window.innerHeight
+    );
+    this.emojis.push({emoji, x, y,});
   }
 
   animate() {
-    this.comps.forEach((item) => {
+    this.emojisComps.forEach((item, index) => {
       item.update();
+      if (item.y > window.innerHeight) {
+        this.emojis.splice(index, 1);
+      }
     });
     requestAnimationFrame(() => this.animate());
+  }
+
+  async start() {
+    await this.audio.createAudioClassifier(1);
+    await this.audio.runStreamingAudioClassification();
+  }
+
+  getRandomPosition(screenWidth: number, screenHeight: number) {
+    return {
+      x: Math.floor(Math.random() * screenWidth),
+      y: Math.floor(Math.random() * screenHeight),
+    };
   }
 }
