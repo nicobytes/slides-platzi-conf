@@ -54,6 +54,7 @@ export class LaunchpadService {
       const song = new Audio('./assets/song.wav');
 
       myInput.addListener("noteon", e => {
+        console.log(e.note.identifier);
         //const file = this.audios[e.note.identifier];
         const file = this.song1.files[this.song1.currentStep];
         console.log(this.song1.currentStep);
