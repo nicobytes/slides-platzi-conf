@@ -3,7 +3,7 @@ import { NgFor } from '@angular/common';
 import { Emoji } from '@app/models/emoji.model';
 import { EmojiComponent } from '@app/components/emoji/emoji.component';
 import { EMOJIS } from '@app/utils/emojis';
-import { AudioTaskService } from '@app/services/audio-task.service';
+import { AudioTaskService } from '@app/services/audio-task.service-demo';
 import { debounceTime } from 'rxjs';
 
 @Component({

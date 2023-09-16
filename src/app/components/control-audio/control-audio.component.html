@@ -1,9 +1,9 @@
 <button (click)="start()">start</button>
 <div class="flex flex-col space-y-2 w-full">
   <div class="flex flex-col w-full" *ngFor="let category of categories$ | async">
-    <div class="mb-1 text-base font-medium ">{{category.categoryName}} {{category.score | percent}}</div>
-    <div class="w-full bg-gray-200 rounded-full h-2.5 mb-4 ">
-      <div class="bg-blue-600 h-2.5 rounded-full " [style.width]="category.score | percent"></div>
+    <div class="mb-1 text-3xl font-medium ">{{category.categoryName}} {{category.score | percent}}</div>
+    <div class="w-full bg-gray-200 rounded-full h-5 mb-4 ">
+      <div class="bg-blue-600 h-5 rounded-full " [style.width]="category.score | percent"></div>
     </div>
   </div>
 </div>

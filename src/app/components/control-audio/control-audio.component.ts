@@ -1,6 +1,6 @@
 import { Component, inject, ChangeDetectorRef } from '@angular/core';
 import { AsyncPipe, NgFor, PercentPipe } from '@angular/common';
-import { AudioTaskService } from '@app/services/audio-task.service';
+import { AudioTaskService } from '@app/services/audio-task.service-demo';
 
 @Component({
   selector: 'app-control-audio',

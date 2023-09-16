@@ -1,6 +1,6 @@
 import { Component, effect, inject, signal } from '@angular/core';
 import { NgFor, NgOptimizedImage } from '@angular/common';
-import { AudioTaskService } from '@app/services/audio-task.service';
+import { AudioTaskService } from '@app/services/audio-task.service-demo';
 import { DalleService } from '@app/services/dalle.service';
 import { concatMap, debounceTime, delay, of } from 'rxjs';
 import { EMOJIS } from '@app/utils/emojis';
