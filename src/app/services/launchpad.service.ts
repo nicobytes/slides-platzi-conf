@@ -47,7 +47,7 @@ export class LaunchpadService {
     .enable()
     .then(() => {
       this.connected.set(true);
-      const myInput = WebMidi.getInputById(WebMidi.inputs[2].id);
+      const myInput = WebMidi.getInputById(WebMidi.inputs[1].id);
       const myOutput = WebMidi.getOutputById(WebMidi.outputs[1].id);
       const myChannel = myOutput?.channels[1];
       let audio!: HTMLAudioElement;

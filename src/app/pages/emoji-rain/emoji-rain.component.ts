@@ -35,7 +35,7 @@ export class EmojiRainComponent {
   constructor() {
     this.categories$
     .pipe(
-      debounceTime(350)
+      debounceTime(200)
     )
     .subscribe((values) => {
       console.log(
