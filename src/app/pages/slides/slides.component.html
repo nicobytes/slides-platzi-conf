@@ -2,7 +2,7 @@
   <div class="slides">
     <!-- Slide -->
     <section
-      class="h-full w-full"
+      class="h-full w-full relative"
       data-background-image="assets/backgrounds/conf.png"
     >
       <app-emoji-rain />
@@ -12,24 +12,40 @@
     <!-- Slide -->
     <section data-background-image="assets/images/midjourney.jpeg"></section>
     <!-- Slide -->
-    <section data-background-image="assets/backgrounds/circle.png">
-      <div class="flex items-center justify-center">
+    <section
+      class="relative h-full w-full flex items-center justify-center"
+      data-background-image="assets/backgrounds/circle.png"
+    >
+      <div class="flex items-center justify-center h-full w-full">
         <p class="font-medium text-white text-6xl w-3/4 leading-tight">
           ¿Y el ámbito musical?
         </p>
       </div>
+      <img
+        class="w-44 absolute bottom-8 left-8"
+        src="assets/images/logo.png"
+        alt="logo"
+      />
     </section>
     <!-- Slide -->
-    <section data-background-image="assets/backgrounds/circle.png">
-      <div class="flex items-center justify-center">
+    <section
+      class="relative h-full w-full flex items-center justify-center"
+      data-background-image="assets/backgrounds/circle.png"
+    >
+      <div class="h-full w-full flex items-center justify-center">
         <p class="font-medium text-white text-6xl w-3/4 leading-tight">
           Text-to-Music
         </p>
       </div>
+      <img
+        class="w-44 absolute bottom-8 left-8"
+        src="assets/images/logo.png"
+        alt="logo"
+      />
     </section>
     <!-- Slide -->
     <section
-      class="h-full w-full"
+      class="relative h-full w-full flex items-center justify-center"
       data-background-image="assets/backgrounds/image.png"
     >
       <div class="h-full w-full flex ml-10 overflow-hidden">
@@ -49,20 +65,35 @@
           [ngStyle]="{ 'background-image': 'url(assets/images/musicml.png)' }"
         ></div>
       </div>
+      <img
+        class="w-44 absolute bottom-8 left-8"
+        src="assets/images/logo.png"
+        alt="logo"
+      />
     </section>
     <!-- Slide -->
-    <section data-background-image="assets/backgrounds/slide.png">
-      <div class="flex flex-col">
+    <section
+      class="relative h-full w-full flex items-center justify-center"
+      data-background-image="assets/backgrounds/slide.png"
+    >
+      <div class="flex flex-col h-full w-full items-center justify-center">
         <p class="font-medium text-white text-6xl w-full my-2">Prompt</p>
         <p class="font-medium text-white text-5xl w-full italic mt-2 mb-10">
           "melodic techno"
         </p>
-        <app-wave-audio audio="assets/audios/melodic-techno.wav" />
+        <div class="w-full">
+          <app-wave-audio audio="assets/audios/melodic-techno.wav" />
+        </div>
       </div>
+      <img
+        class="w-44 absolute bottom-8 left-8"
+        src="assets/images/logo.png"
+        alt="logo"
+      />
     </section>
     <!-- Slide -->
     <section
-      class="h-full w-full"
+      class="relative h-full w-full flex items-center justify-center"
       data-background-image="assets/backgrounds/image.png"
     >
       <div class="h-full w-full flex ml-10">
@@ -84,26 +115,51 @@
           }"
         ></div>
       </div>
-    </section>
-    <!-- Slide -->
-    <section data-background-image="assets/backgrounds/circle.png">
-      <p class="font-medium text-white text-6xl">Text-to-Audio</p>
+      <img
+        class="w-44 absolute bottom-8 left-8"
+        src="assets/images/logo.png"
+        alt="logo"
+      />
     </section>
     <!-- Slide -->
     <section
+      class="relative h-full w-full flex items-center justify-center"
+      data-background-image="assets/backgrounds/circle.png"
+    >
+      <div class="h-full w-full flex items-center justify-center">
+        <p class="font-medium text-white text-6xl w-3/4 leading-tight">
+          Text-to-Audio
+        </p>
+      </div>
+      <img
+        class="w-44 absolute bottom-8 left-8"
+        src="assets/images/logo.png"
+        alt="logo"
+      />
+    </section>
+    <!-- Slide -->
+    <section
+      class="relative h-full w-full flex items-center justify-center"
       data-background-image="assets/backgrounds/slide.png"
     >
-      <div class="flex flex-col">
+      <div class="flex flex-col h-full w-full items-center justify-center">
         <p class="font-medium text-white text-6xl w-full my-2">Prompt</p>
         <p class="font-medium text-white text-5xl w-full italic mt-2 mb-10">
           "Whistling with wind blowing"
         </p>
-        <app-wave-audio audio="assets/audios/whistling.mp3" />
+        <div class="w-full">
+          <app-wave-audio audio="assets/audios/whistling.mp3" />
+        </div>
       </div>
+      <img
+        class="w-44 absolute bottom-8 left-8"
+        src="assets/images/logo.png"
+        alt="logo"
+      />
     </section>
     <!-- Slide -->
     <section
-      class="h-full w-full"
+      class="relative h-full w-full flex items-center justify-center"
       data-background-image="assets/backgrounds/image.png"
     >
       <div class="h-full w-full flex ml-10">
@@ -123,66 +179,143 @@
           [ngStyle]="{ 'background-image': 'url(assets/images/stable.png)' }"
         ></div>
       </div>
+      <img
+        class="w-44 absolute bottom-8 left-8"
+        src="assets/images/logo.png"
+        alt="logo"
+      />
     </section>
     <!-- Slide -->
-    <section data-background-image="assets/backgrounds/circle.png">
-      <p class="font-medium text-white text-6xl">InPainting</p>
+    <section
+      class="relative h-full w-full flex items-center justify-center"
+      data-background-image="assets/backgrounds/circle.png"
+    >
+      <div class="h-full w-full flex items-center justify-center">
+        <p class="font-medium text-white text-6xl w-3/4 leading-tight">
+          InPainting
+        </p>
+      </div>
+      <img
+        class="w-44 absolute bottom-8 left-8"
+        src="assets/images/logo.png"
+        alt="logo"
+      />
     </section>
     <!-- Slide -->
     <section data-background-image="assets/images/meme.png"></section>
     <!-- Slide -->
     <section data-background-image="assets/images/meme-fill.jpeg"></section>
     <!-- Slide -->
-    <section data-background-image="assets/backgrounds/slide.png">
-      <div class="flex flex-col">
+    <section
+      class="relative h-full w-full flex items-center justify-center"
+      data-background-image="assets/backgrounds/slide.png"
+    >
+      <div class="flex flex-col h-full w-full items-center justify-center">
         <p class="font-medium text-white text-6xl w-full mt-2 mb-10">
           Audio Mask
         </p>
-        <app-wave-audio audio="assets/audios/intense-masked.wav" />
+        <div class="w-full">
+          <app-wave-audio audio="assets/audios/intense-masked.wav" />
+        </div>
       </div>
+      <img
+        class="w-44 absolute bottom-8 left-8"
+        src="assets/images/logo.png"
+        alt="logo"
+      />
     </section>
     <!-- Slide -->
-    <section data-background-image="assets/backgrounds/slide.png">
-      <div class="flex flex-col">
+    <section
+      class="relative h-full w-full flex items-center justify-center"
+      data-background-image="assets/backgrounds/slide.png"
+    >
+      <div class="flex flex-col h-full w-full items-center justify-center">
         <p class="font-medium text-white text-6xl w-full my-2">
           Audio Mask + Prompt
         </p>
         <p class="font-medium text-white text-4xl w-full italic mt-2 mb-10">
           “Intense, drama, climax, avengers, dark knight, man of steel”
         </p>
-        <app-wave-audio audio="assets/audios/intense-continued.wav" />
+        <div class="w-full">
+          <app-wave-audio audio="assets/audios/intense-continued.wav" />
+        </div>
       </div>
+      <img
+        class="w-44 absolute bottom-8 left-8"
+        src="assets/images/logo.png"
+        alt="logo"
+      />
     </section>
     <!-- Slide -->
-    <section data-background-image="assets/backgrounds/circle.png">
-      <p class="font-medium text-white text-6xl">Condicionamiento</p>
+    <section
+      class="relative h-full w-full flex items-center justify-center"
+      data-background-image="assets/backgrounds/circle.png"
+    >
+      <div class="h-full w-full flex items-center justify-center">
+        <p class="font-medium text-white text-6xl w-3/4 leading-tight">
+          Condicionamiento
+        </p>
+      </div>
+      <img
+        class="w-44 absolute bottom-8 left-8"
+        src="assets/images/logo.png"
+        alt="logo"
+      />
     </section>
     <!-- Slide -->
-    <section data-background-image="assets/backgrounds/slide.png">
-      <div class="flex flex-col">
+    <section
+      class="relative h-full w-full flex items-center justify-center"
+      data-background-image="assets/backgrounds/slide.png"
+    >
+      <div class="flex-col h-full w-full flex items-center justify-center">
         <p class="font-medium text-white text-6xl w-full mt-2 mb-10">Melody</p>
-        <app-wave-audio audio="assets/audios/melody.wav" />
+        <div class="w-full">
+          <app-wave-audio audio="assets/audios/melody.wav" />
+        </div>
       </div>
+      <img
+        class="w-44 absolute bottom-8 left-8"
+        src="assets/images/logo.png"
+        alt="logo"
+      />
     </section>
     <!-- Slide -->
-    <section data-background-image="assets/backgrounds/slide.png">
-      <div class="flex flex-col">
+    <section
+      class="relative h-full w-full flex items-center justify-center"
+      data-background-image="assets/backgrounds/slide.png"
+    >
+      <div class="flex-col h-full w-full flex items-center justify-center">
         <p class="font-medium text-white text-6xl w-full my-2">
           Melody + Prompt
         </p>
         <p class="font-medium text-white text-5xl w-full italic mt-2 mb-10">
           “guitar solo”
         </p>
-        <app-wave-audio audio="assets/audios/guitar-solo.wav" />
+        <div class="w-full">
+          <app-wave-audio audio="assets/audios/guitar-solo.wav" />
+        </div>
       </div>
+      <img
+        class="w-44 absolute bottom-8 left-8"
+        src="assets/images/logo.png"
+        alt="logo"
+      />
     </section>
     <!-- Slide -->
-    <section data-background-image="assets/backgrounds/circle.png">
-      <div class="flex items-center justify-center">
+    <section
+      class="relative h-full w-full flex items-center justify-center"
+      data-background-image="assets/backgrounds/circle.png"
+    >
+      <div class="h-full w-full flex items-center justify-center">
         <p class="font-medium text-white text-6xl w-3/4 leading-tight">
           ¿Cómo puedo usarlo en mis proyectos?
         </p>
       </div>
+      <img
+        class="w-44 absolute bottom-8 left-8"
+        src="assets/images/logo.png"
+        alt="logo"
+      />
     </section>
     <!-- Slide -->
     <section
@@ -225,20 +358,31 @@
       data-background-image="assets/images/musicgen.png"
     ></section>
     <!-- Slide -->
-    <section data-background-image="assets/backgrounds/circle.png">
-      <div class="flex items-center justify-center">
+    <section
+      class="relative h-full w-full flex items-center justify-center"
+      data-background-image="assets/backgrounds/circle.png"
+    >
+      <div class="h-full w-full flex items-center justify-center">
         <p class="font-medium text-white text-6xl w-3/4 leading-tight">
           ¿Cómo te imaginas un futuro donde una IA generé música en tiempo real?
         </p>
       </div>
+      <img
+        class="w-44 absolute bottom-8 left-8"
+        src="assets/images/logo.png"
+        alt="logo"
+      />
     </section>
     <!-- Slide -->
     <section data-background-image="assets/images/waiting.jpg"></section>
     <!-- Slide -->
     <section data-background-image="assets/images/mediapipe.png"></section>
     <!-- Slide -->
-    <section data-background-image="assets/backgrounds/slide.png">
-      <div class="flex items-center justify-center flex-col">
+    <section
+      class="h-full w-full flex items-center justify-center"
+      data-background-image="assets/backgrounds/slide.png"
+    >
+      <div class="flex items-center justify-center flex-col h-full w-full">
         <p class="font-medium text-white text-6xl w-3/4 leading-tight">
           Replace Background
         </p>
@@ -251,31 +395,45 @@
           alt="replace"
         />
       </div>
+      <img
+        class="w-44 absolute bottom-8 left-8"
+        src="assets/images/logo.png"
+        alt="logo"
+      />
     </section>
     <!-- Slide -->
-    <section data-background-image="assets/backgrounds/slide.png">
-      <div class="flex items-center justify-center flex-col">
+    <section
+      class="h-full w-full flex items-center justify-center"
+      data-background-image="assets/backgrounds/slide.png"
+    >
+      <div class="flex items-center justify-center flex-col h-full w-full">
         <p class="font-medium text-white text-6xl w-3/4 leading-tight">
           YAMNet Model
         </p>
         <img class="w-3/4 mt-10" src="assets/images/yamnet.gif" alt="replace" />
       </div>
+      <img
+        class="w-44 absolute bottom-8 left-8"
+        src="assets/images/logo.png"
+        alt="logo"
+      />
     </section>
     <!-- Slide -->
     <section
-      class="h-full w-full"
-      data-background-image="assets/backgrounds/conf.png"
+      class="h-full w-full flex items-center justify-center"
+      data-background-image="assets/backgrounds/slide.png"
     >
-      <app-emoji-rain />
-    </section>
-    <!-- Slide -->
-    <section data-background-image="assets/backgrounds/slide.png">
-      <div class="flex flex-col justify-center items-center">
+      <div class="flex flex-col justify-center items-center h-full w-full">
         <div class="w-1/2">
           <app-wave-micro />
         </div>
         <app-control-audio />
       </div>
+      <img
+        class="w-44 absolute bottom-8 left-8"
+        src="assets/images/logo.png"
+        alt="logo"
+      />
     </section>
     <!-- Slide -->
     <section data-background-color="white">
@@ -287,12 +445,8 @@
       </div>
     </section>
     <!-- Slide -->
-    <section data-background-image="assets/backgrounds/circle.png">
-      <div class="flex items-center justify-center">
-        <p class="font-medium text-white text-6xl w-3/4 leading-tight">
-          ¿Cómo te imaginas un futuro donde una IA generé música en tiempo real?
-        </p>
-      </div>
+    <section data-background-image="assets/backgrounds/conf.png">
+      <app-emoji-rain />
     </section>
   </div>
 </div>

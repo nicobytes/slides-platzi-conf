@@ -15,7 +15,7 @@ import { ControlAudioComponent } from '@app/components/control-audio/control-aud
   imports: [CommonModule, WaveAudioComponent, EmojiRainComponent, WaveMicroComponent, ControlAudioComponent],
   templateUrl: './slides.component.html',
 })
-export class SlidesComponent {
+export default class SlidesComponent {
 
   private audio = inject(AudioTaskService);
 
