@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-wave-micro',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './wave-micro.component.html'
+  template: '<canvas #wave class="h-full w-full"></canvas>'
 })
 export class WaveMicroComponent {
   @ViewChild('wave', { static: true }) canvasRef!: ElementRef<HTMLCanvasElement>;
@@ -34,7 +34,7 @@ export class WaveMicroComponent {
     if (!canvasContext) return;
     canvasContext.clearRect(0, 0, canvas.width, canvas.height);
     canvasContext.lineWidth = 2;
-    canvasContext.strokeStyle = 'rgb(0, 0, 0)';
+    canvasContext.strokeStyle = 'rgb(255, 255, 2555)';
     canvasContext.beginPath();
 
     const sliceWidth = canvas.width * 1.0 / this.dataArray.length;

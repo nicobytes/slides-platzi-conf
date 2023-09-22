@@ -1,0 +1,301 @@
+<div class="reveal bg-black">
+  <div class="slides">
+    <!-- Slide -->
+    <section
+      class="h-full w-full"
+      data-background-image="assets/backgrounds/conf.png"
+    >
+      <app-emoji-rain />
+    </section>
+    <!-- Slide -->
+    <section data-background-image="assets/images/chatgpt.webp"></section>
+    <!-- Slide -->
+    <section data-background-image="assets/images/midjourney.jpeg"></section>
+    <!-- Slide -->
+    <section data-background-image="assets/backgrounds/circle.png">
+      <div class="flex items-center justify-center">
+        <p class="font-medium text-white text-6xl w-3/4 leading-tight">
+          ¿Y el ámbito musical?
+        </p>
+      </div>
+    </section>
+    <!-- Slide -->
+    <section data-background-image="assets/backgrounds/circle.png">
+      <div class="flex items-center justify-center">
+        <p class="font-medium text-white text-6xl w-3/4 leading-tight">
+          Text-to-Music
+        </p>
+      </div>
+    </section>
+    <!-- Slide -->
+    <section
+      class="h-full w-full"
+      data-background-image="assets/backgrounds/image.png"
+    >
+      <div class="h-full w-full flex ml-10 overflow-hidden">
+        <div class="w-3/5 h-full flex flex-col justify-center items-center">
+          <p class="font-medium text-white text-6xl text-left w-full">
+            Music ML
+          </p>
+          <p class="font-medium text-white text-6xl text-left w-full">
+            By Google
+          </p>
+          <p class="font-thin text-white text-5xl text-left w-full mt-10">
+            Enero 2023
+          </p>
+        </div>
+        <div
+          class="w-2/5 bg-cover"
+          [ngStyle]="{ 'background-image': 'url(assets/images/musicml.png)' }"
+        ></div>
+      </div>
+    </section>
+    <!-- Slide -->
+    <section data-background-image="assets/backgrounds/slide.png">
+      <div class="flex flex-col">
+        <p class="font-medium text-white text-6xl w-full my-2">Prompt</p>
+        <p class="font-medium text-white text-5xl w-full italic mt-2 mb-10">
+          "melodic techno"
+        </p>
+        <app-wave-audio audio="assets/audios/melodic-techno.wav" />
+      </div>
+    </section>
+    <!-- Slide -->
+    <section
+      class="h-full w-full"
+      data-background-size="100% auto"
+      data-background-image="assets/backgrounds/image.png"
+    >
+      <div class="h-full w-full flex ml-10">
+        <div class="w-3/5 h-full flex flex-col justify-center items-center">
+          <p class="font-medium text-white text-6xl text-left w-full">
+            Audio Craft
+          </p>
+          <p class="font-medium text-white text-6xl text-left w-full">
+            By Meta
+          </p>
+          <p class="font-thin text-white text-5xl text-left w-full mt-10">
+            Junio 2023
+          </p>
+        </div>
+        <div
+          class="w-2/5 bg-cover"
+          [ngStyle]="{
+            'background-image': 'url(assets/images/audio-meta.png)'
+          }"
+        ></div>
+      </div>
+    </section>
+    <!-- Slide -->
+    <section data-background-image="assets/backgrounds/circle.png">
+      <p class="font-medium text-white text-6xl">Text-to-Audio</p>
+    </section>
+    <!-- Slide -->
+    <section
+      data-background-size="100% auto"
+      data-background-image="assets/backgrounds/slide.png"
+    >
+      <div class="flex flex-col">
+        <p class="font-medium text-white text-6xl w-full my-2">Prompt</p>
+        <p class="font-medium text-white text-5xl w-full italic mt-2 mb-10">
+          "Whistling with wind blowing"
+        </p>
+        <app-wave-audio audio="assets/audios/whistling.mp3" />
+      </div>
+    </section>
+    <!-- Slide -->
+    <section
+      class="h-full w-full"
+      data-background-size="100% auto"
+      data-background-image="assets/backgrounds/image.png"
+    >
+      <div class="h-full w-full flex ml-10">
+        <div class="w-3/5 h-full flex flex-col justify-center items-center">
+          <p class="font-medium text-white text-6xl text-left w-full">
+            Stable Audio
+          </p>
+          <p class="font-medium text-white text-6xl text-left w-full">
+            By StabilityAI
+          </p>
+          <p class="font-thin text-white text-5xl text-left w-full mt-10">
+            Septiembre 2023
+          </p>
+        </div>
+        <div
+          class="w-2/5 bg-cover bg-center"
+          [ngStyle]="{ 'background-image': 'url(assets/images/stable.png)' }"
+        ></div>
+      </div>
+    </section>
+    <!-- Slide -->
+    <section data-background-image="assets/backgrounds/circle.png">
+      <p class="font-medium text-white text-6xl">InPainting</p>
+    </section>
+    <!-- Slide -->
+    <section data-background-image="assets/images/meme.png"></section>
+    <!-- Slide -->
+    <section data-background-image="assets/images/meme-fill.jpeg"></section>
+    <!-- Slide -->
+    <section data-background-image="assets/backgrounds/slide.png">
+      <div class="flex flex-col">
+        <p class="font-medium text-white text-6xl w-full mt-2 mb-10">
+          Audio Mask
+        </p>
+        <app-wave-audio audio="assets/audios/intense-masked.wav" />
+      </div>
+    </section>
+    <!-- Slide -->
+    <section data-background-image="assets/backgrounds/slide.png">
+      <div class="flex flex-col">
+        <p class="font-medium text-white text-6xl w-full my-2">
+          Audio Mask + Prompt
+        </p>
+        <p class="font-medium text-white text-4xl w-full italic mt-2 mb-10">
+          “Intense, drama, climax, avengers, dark knight, man of steel”
+        </p>
+        <app-wave-audio audio="assets/audios/intense-continued.wav" />
+      </div>
+    </section>
+    <!-- Slide -->
+    <section data-background-image="assets/backgrounds/circle.png">
+      <p class="font-medium text-white text-6xl">Condicionamiento</p>
+    </section>
+    <!-- Slide -->
+    <section data-background-image="assets/backgrounds/slide.png">
+      <div class="flex flex-col">
+        <p class="font-medium text-white text-6xl w-full mt-2 mb-10">Melody</p>
+        <app-wave-audio audio="assets/audios/melody.wav" />
+      </div>
+    </section>
+    <!-- Slide -->
+    <section data-background-image="assets/backgrounds/slide.png">
+      <div class="flex flex-col">
+        <p class="font-medium text-white text-6xl w-full my-2">
+          Melody + Prompt
+        </p>
+        <p class="font-medium text-white text-5xl w-full italic mt-2 mb-10">
+          “guitar solo”
+        </p>
+        <app-wave-audio audio="assets/audios/guitar-solo.wav" />
+      </div>
+    </section>
+    <!-- Slide -->
+    <section data-background-image="assets/backgrounds/circle.png">
+      <div class="flex items-center justify-center">
+        <p class="font-medium text-white text-6xl w-3/4 leading-tight">
+          ¿Cómo puedo usarlo en mis proyectos?
+        </p>
+      </div>
+    </section>
+    <!-- Slide -->
+    <section
+      data-background-size="100% auto"
+      data-background-image="assets/images/stableaudio.png"
+    ></section>
+    <!-- Slide -->
+    <section data-background-color="#272822">
+      <pre>
+        <code class="text-left text-xl">
+          import torchaudio
+          from audiocraft.models import AudioGen
+          from audiocraft.data.audio import audio_write
+
+          model = AudioGen.get_pretrained('facebook/audiogen-medium')
+          # generate 5 seconds.
+          model.set_generation_params(duration=5)
+          descriptions = [
+            'dog barking',
+            'sirene of an emergency vehicle',
+            'footsteps in a corridor'
+          ]
+          # generates 3 samples.
+          wav = model.generate(descriptions)
+
+          for idx, one_wav in enumerate(wav):
+              audio_write(
+                idx,
+                one_wav.cpu(),
+                model.sample_rate,
+                strategy="loudness",
+                loudness_compressor=True
+              )
+        </code>
+     </pre>
+    </section>
+    <!-- Slide -->
+    <section
+      data-background-size="100% auto"
+      data-background-image="assets/images/musicgen.png"
+    ></section>
+    <!-- Slide -->
+    <section data-background-image="assets/backgrounds/circle.png">
+      <div class="flex items-center justify-center">
+        <p class="font-medium text-white text-6xl w-3/4 leading-tight">
+          ¿Cómo te imaginas un futuro donde una IA generé música en tiempo real?
+        </p>
+      </div>
+    </section>
+    <!-- Slide -->
+    <section data-background-image="assets/images/waiting.jpg"></section>
+    <!-- Slide -->
+    <section data-background-image="assets/images/mediapipe.png"></section>
+    <!-- Slide -->
+    <section data-background-image="assets/backgrounds/slide.png">
+      <div class="flex items-center justify-center flex-col">
+        <p class="font-medium text-white text-6xl w-3/4 leading-tight">
+          Replace Background
+        </p>
+        <p class="font-thin text-white text-5xl w-3/4 leading-tight">
+          Powered by Web ML
+        </p>
+        <img
+          class="w-3/4 mt-10"
+          src="assets/images/replace-bg.gif"
+          alt="replace"
+        />
+      </div>
+    </section>
+    <!-- Slide -->
+    <section data-background-image="assets/backgrounds/slide.png">
+      <div class="flex items-center justify-center flex-col">
+        <p class="font-medium text-white text-6xl w-3/4 leading-tight">
+          YAMNet Model
+        </p>
+        <img class="w-3/4 mt-10" src="assets/images/yamnet.gif" alt="replace" />
+      </div>
+    </section>
+    <!-- Slide -->
+    <section
+      class="h-full w-full"
+      data-background-image="assets/backgrounds/conf.png"
+    >
+      <app-emoji-rain />
+    </section>
+    <!-- Slide -->
+    <section data-background-image="assets/backgrounds/slide.png">
+      <div class="flex flex-col justify-center items-center">
+        <div class="w-1/2">
+          <app-wave-micro />
+        </div>
+        <app-control-audio />
+      </div>
+    </section>
+    <!-- Slide -->
+    <section data-background-color="white">
+      <div class="flex flex-col justify-center items-center p-10">
+        <img class="w-56" src="assets/images/new-logo.gif" alt="lullai" />
+        <div class="w-1/2">
+          <img src="assets/images/app.gif" alt="lullai" />
+        </div>
+      </div>
+    </section>
+    <!-- Slide -->
+    <section data-background-image="assets/backgrounds/circle.png">
+      <div class="flex items-center justify-center">
+        <p class="font-medium text-white text-6xl w-3/4 leading-tight">
+          ¿Cómo te imaginas un futuro donde una IA generé música en tiempo real?
+        </p>
+      </div>
+    </section>
+  </div>
+</div>

@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { LaunchpadService } from './services/launchpad.service';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +8,4 @@ import { LaunchpadService } from './services/launchpad.service';
   template: '<router-outlet></router-outlet>',
 })
 export class AppComponent {
-
-  private launchpad = inject(LaunchpadService);
-
-  ngOnInit() {
-    this.launchpad.connect();
-  }
 }

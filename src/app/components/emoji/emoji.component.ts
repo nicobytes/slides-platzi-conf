@@ -6,7 +6,7 @@ import { NgStyle } from '@angular/common';
   standalone: true,
   imports: [NgStyle],
   template: `
-    <span class="text-3xl absolute" [ngStyle]="styles">{{ emoji }}</span>
+    <span class="text-2xl absolute" [ngStyle]="styles">{{ emoji }}</span>
   `,
 })
 export class EmojiComponent {
@@ -21,6 +21,8 @@ export class EmojiComponent {
     color: 'hsl(' + ((Math.random() * 360) | 0) + ',80%,50%)',
     opacity: '0',
     transform: `translate3d(${this.x}px, ${this.y}px,  0px)`,
+    top: 0,
+    left: 0
   };
 
   update() {

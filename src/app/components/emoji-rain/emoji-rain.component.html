@@ -1,0 +1,63 @@
+<div class="w-full h-full absolute overflow-hidden">
+  <app-emoji
+    *ngFor="let item of emojis"
+    [x]="item.x"
+    [y]="item.y"
+    [emoji]="item.emoji"
+  ></app-emoji>
+</div>
+<div
+  class="h-full w-full relative flex flex-col justify-center items-start px-20"
+>
+  <p
+    class="text-white text-6xl font-medium -z-10 leading-tight text-left"
+  >
+    Experiencia interactiva
+  </p>
+  <p
+    class="text-white text-6xl font-medium -z-10 leading-tight text-left"
+  >
+    con IA y música
+  </p>
+  <p class="text-white text-5xl font-thin -z-10 leading-tight text-left mt-10">
+    Por @nicobytes
+  </p>
+
+  <button
+    class="h-14 w-14 mt-4 rounded-full bg-gray-50 flex items-center justify-center z-50"
+    (click)="play()"
+  >
+    <span *ngIf="isPlaying()">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-6 h-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M15.75 5.25v13.5m-7.5-13.5v13.5"
+        />
+      </svg>
+    </span>
+    <span *ngIf="!isPlaying()">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-6 h-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z"
+        />
+      </svg>
+    </span>
+  </button>
+</div>

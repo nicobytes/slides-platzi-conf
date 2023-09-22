@@ -34,7 +34,7 @@ export const EMOJIS = [
   "🎶",  // Humming
   "😩",  // Groan
   "😤",  // Grunt
-  "🎵",  // Whistling
+  "😮‍💨",  // Whistling
   "😤",  // Breathing
   "😮‍💨",// Wheeze
   "💤",  // Snoring
